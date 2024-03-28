@@ -1,4 +1,4 @@
-package com.tiger.service.aop;
+package com.tiger.product.aop;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -26,7 +26,7 @@ public class LogAop {
 
     private static DecimalFormat decimalFormat = new DecimalFormat("#.###");
 
-    @Pointcut(value = "execution(* com.tiger.service.controller.*.*(..))")
+    @Pointcut(value = "execution(* com.tiger.product.controller.*.*(..))")
     public void log() {
     }
 

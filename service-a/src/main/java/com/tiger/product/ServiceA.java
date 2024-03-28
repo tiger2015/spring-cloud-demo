@@ -1,11 +1,11 @@
-package com.tiger.service;
+package com.tiger.product;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
- * @ClassName: ServiceB
+ * @ClassName: ServiceA
  * @Author: Zeng.h
  * @Date: 2024/3/28
  * @Description:
@@ -13,9 +13,11 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  **/
 @SpringBootApplication
 @EnableEurekaClient
-public class ServiceB {
+public class ServiceA {
 
     public static void main(String[] args) {
-        new SpringApplication(ServiceB.class).run(args);
+        new SpringApplication(ServiceA.class).run(args);
     }
+
+
 }

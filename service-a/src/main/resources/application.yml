@@ -4,11 +4,14 @@ server:
 spring:
   application:
     name: hello-service
-
+  profiles:
+    active: mysql
 eureka:
   client:
     register-with-eureka: true
     service-url:
       defaultZone: http://127.0.0.1:9001/eureka/
-
-
+mybatis-plus:
+  type-aliases-package: com.tiger.product.model
+  configuration:
+    use-generated-keys: true

@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: test
+    password: test
+    hikari:
+      connection-timeout: 5000
+      maximum-pool-size: 16
+      minimum-idle: 8
+      auto-commit: false
+    url: jdbc:mysql://127.0.0.1:3306/sale
