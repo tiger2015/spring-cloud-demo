@@ -1,0 +1,14 @@
+server:
+  port: 9003
+
+spring:
+  application:
+    name: hello-service
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://127.0.0.1:9001/eureka/
+
+
