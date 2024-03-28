@@ -1,6 +1,7 @@
 package com.tiger.consumer.service;
 
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import com.tiger.consumer.config.HelloServiceLoadBalanceConfig;
+import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,10 +13,10 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @Description:
  * @Version: 1.0
  **/
-@FeignClient(name = "HELLO-SERVICE")
+@FeignClient(name = "hello-service")
+@LoadBalancerClient(name = "hello-service", configuration = {HelloServiceLoadBalanceConfig.class})
 public interface HelloService {
 
     @GetMapping("/hello/{name}")
-    @LoadBalanced
     String hello(@PathVariable("name") String name);
 }

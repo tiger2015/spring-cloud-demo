@@ -4,9 +4,18 @@ server:
 spring:
   application:
     name: hello-consumer
+  cloud:
+    loadbalancer:
+      clients:
+        hello-service:
+          retry:
+            maxRetriesOnSameServiceInstance: 3
 
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:9001/eureka/
     register-with-eureka: false
+feign:
+  circuitbreaker:
+    enabled: true
